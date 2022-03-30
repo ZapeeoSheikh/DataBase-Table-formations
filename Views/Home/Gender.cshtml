@@ -1,0 +1,56 @@
+﻿@using MyWebProject.Models
+
+@model List<Gender>
+
+<h2> </h2>
+<div class="container col-lg-4 col-lg-push-4">
+    <div class="panel panel-heading panel-primary">
+        Gender Sorting
+    </div>
+    <div class="panel-body panel-primary">
+        <div class="form-group">
+            <form action="/Home/Gender">
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd">
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<table class="table table-striped">
+    <tr>
+        <td>
+            ID
+        </td>
+
+        <td>
+            Name
+        </td>
+
+    </tr>
+    <tr>
+
+        @foreach (var item in Model)
+        {
+        <td>@item.Id </td>
+
+        }
+
+
+        @foreach (var item in Model)
+        {
+        <td>@item.Name </td>
+
+        }
+
+    </tr>
+</table>
